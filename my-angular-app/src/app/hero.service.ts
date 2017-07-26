@@ -59,6 +59,6 @@ export class HeroService {
     .toPromise()
     .then(() => null)
     .catch(this.handleError);
-}
+ }
 
 }
