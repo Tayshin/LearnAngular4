@@ -1,12 +1,11 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TodoListComponent } from '../components/todo-list/todo-list.component';
+
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/', pathMatch: 'full' },
-  // { path: '',  component: DashboardComponent },
-//   { path: 'detail/:id', component: HeroDetailComponent },
-//   { path: 'heroes',     component: HeroesComponent },
-//   { path: 'animate', component:HeroListBasicComponent}
+    { path: '', component: TodoListComponent, pathMatch: 'full' },
+    { path: ':status', component: TodoListComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

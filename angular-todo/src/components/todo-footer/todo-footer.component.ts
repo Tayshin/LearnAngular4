@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { TodoStoreService } from '../../services/todo-store.service';
@@ -7,7 +7,7 @@ import { TodoStoreService } from '../../services/todo-store.service';
 	selector: 'todo-footer',
 	templateUrl: './todo-footer.component.html'
 })
-export class TodoFooterComponent {
+export class TodoFooterComponent implements OnInit{
     _todoStore;
     _route;
     currentStatus;
@@ -17,13 +17,14 @@ export class TodoFooterComponent {
 		this.currentStatus = '';//下方选择的tab的状态  包括 all active  completed
 	}
     //
-	ngOnInit() {
-		this._route.params
-			.map(params => params.status)
-			.subscribe((status) => {
-				this.currentStatus = status || '';
-			});
-	}
+    ngOnInit() {
+        console.log("footer == "+this.currentStatus);
+        this._route.params
+            .map(params => params.status)
+            .subscribe((status) => {
+                this.currentStatus = status || '';
+            });
+    }
     //清除已完成的并保存
 	removeCompleted() {
 		this._todoStore.removeCompleted();

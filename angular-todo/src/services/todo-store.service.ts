@@ -12,7 +12,7 @@ export class TodoStoreService {
     
     constructor() {
         //检查已经存在于缓存中的事项
-        let persistedTodos = JSON.parse(localStorage.getItem('angular-todos')) || [];
+        let persistedTodos = JSON.parse(localStorage.getItem('angular4-todos')) || [];
         //建立todo表
 		this.todos = persistedTodos.map((todo) => {
 			let ret = new TodoModel(todo.title);
@@ -80,8 +80,8 @@ export class TodoStoreService {
 	}
     //保存接口
 	persist() {
-		this._clearCache();
-		localStorage.setItem('angular2-todos', JSON.stringify(this.todos));
+        this._clearCache();
+        localStorage.setItem('angular4-todos', JSON.stringify(this.todos));
 	}
     //uuid找todo
 	_findByUid(uid) {
