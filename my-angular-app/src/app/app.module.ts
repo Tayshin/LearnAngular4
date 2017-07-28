@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
@@ -13,9 +14,11 @@ import { DashboardComponent }   from './dashboard.component';
 import { HeroesComponent }      from './heroes.component';
 import { HeroDetailComponent }  from './hero-detail.component';
 import { HeroService }          from './hero.service';
+import { HeroListBasicComponent } from './hero-list-basic/hero-list-basic.component'
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
@@ -26,6 +29,7 @@ import { HeroService }          from './hero.service';
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
+    HeroListBasicComponent
   ],
   providers: [ HeroService ],
   bootstrap: [ AppComponent ]

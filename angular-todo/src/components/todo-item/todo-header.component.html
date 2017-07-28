@@ -1,0 +1,10 @@
+<li [class.completed]="todo.completed" [class.editing]="editing">
+    <div class="view">
+        <input class="toggle" type="checkbox" (click)="toggleCompletion()" [checked]="todo.completed">
+        <!-- 显示的输入框 -->
+        <label (dblclick)="edit(todo)">{{ todo.title | trim }}</label>
+        <button class="destroy" (click)="remove()"></button>
+    </div>
+    <!-- 真正的输入框 editing控制隐藏和显示-->
+    <input class="edit" *ngIf="editing" [value]="todo.title" #editedtodo (blur)="stopEditing(editedtodo)" (keyup.enter)="stopEditing(editedtodo)" (keyup.escape)="cancelEditing()">
+</li>

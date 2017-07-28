@@ -13,9 +13,11 @@ export class HeroesComponent implements OnInit {
   ngOnInit():void{
     this.getHeroes();
   }
+
   constructor(
     private heroService: HeroService,
     private router: Router){  }
+    
   title = 'Tour of Heros';
   // hero:Hero ={
   // 	id:1,
@@ -35,6 +37,7 @@ export class HeroesComponent implements OnInit {
   gotoDetail():void {
     this.router.navigate(['/detail',this.selectedHero.id]);
   }
+
   add(name: string): void {
   name = name.trim();
   if (!name) { return; }
@@ -44,6 +47,7 @@ export class HeroesComponent implements OnInit {
       this.selectedHero = null;
     });
   } 
+
   delete(hero: Hero): void {
   this.heroService
       .delete(hero.id)
