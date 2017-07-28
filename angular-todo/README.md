@@ -1,5 +1,6 @@
 # AngularTodo
-
+A todo list app demo to learn Angular.
+Finished on 07-28-2017
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.5.
 
 ## Development server
